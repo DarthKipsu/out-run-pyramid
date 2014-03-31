@@ -6,10 +6,9 @@ fs.readFile(process.argv[2], {'encoding': 'UTF-8'}, function (err, data) {
 	var dataArray = createDataArray(data)
 	var sumArray = createSumArray(dataArray)
 	var route = backtrackRoute(sumArray)
+	var mostLikes = returnMostLikes(sumArray)[0]
 	
 	console.log(summingItUp(route, dataArray), '=', mostLikes)
-
-	var mostLikes = returnMostLikes(sumArray)[0]
 	console.log('Eniten tykkäyksiä:', mostLikes)
 })
 
